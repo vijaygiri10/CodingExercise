@@ -1,0 +1,10 @@
+Environment:
+    development:
+        port:   '5050'
+        log_name: 'codingexercise'
+    production:
+        port:   '5050'
+        log_name: 'codingexercise'
+    staging:
+        port:   '5050'
+        log_name: 'codingexercise'

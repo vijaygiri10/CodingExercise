@@ -1,0 +1,38 @@
+Environment:
+    development:
+        user: 'postgres'
+        password:  'postgres'
+        host:  'postgres'
+        port: 5432
+        dbname: 'postgres'
+        pool_max_conns: 1000
+        schema: 'public'
+        sslmode: 'disable'
+        students_table: 'students'
+        assignments_table: 'assignments'
+        student_assignments_score: 'student_assignments_score'
+    production:
+        user: 'postgres'
+        password:  'postgres'
+        host:  'postgres'
+        port: 5432
+        dbname:  'postgres'
+        sslmode:  'disable'
+        pool_max_conns: 1000
+        schema: 'public'
+        students_table: 'students'
+        assignments_table: 'assignments'
+        student_assignments_score: 'student_assignments_score'      
+    staging:
+        user: 'postgres'
+        password:  'postgres'
+        host:  'postgres'
+        port: 5432
+        dbname:  'postgres'
+        sslmode:  'disable'
+        pool_max_conns: 1000
+        schema: 'public'
+        students_table: 'students'
+        assignments_table: 'assignments'
+        student_assignments_score: 'student_assignments_score'
+                

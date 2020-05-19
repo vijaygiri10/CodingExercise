@@ -72,7 +72,7 @@ Vijay Kumar Giri
 }'
 
 [Create Assignment ENDPOINT]
-* curl -X POST 'http://localhost:5050/create/student' \
+* curl -X POST 'http://localhost:5050/create/assignment' \
 --header 'Content-Type: application/json' \
 --data-raw '{
 	"student_id":1,

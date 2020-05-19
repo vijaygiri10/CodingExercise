@@ -68,10 +68,17 @@ func (str student) deleteStudent(ctx context.Context) error {
 	defer conn.Release()
 	query := fmt.Sprintf("DELETE  from %s.%s where student_id=$1;", ServiceConfig.Postgres.Schema, ServiceConfig.Postgres.StudentsTable)
 	if _, err := conn.Exec(ctx, query, str); err != nil {
-		fmt.Println(query, str, "deleteStudent unable to exec query : ", err)
-		log.Error(ctx, query, str, "deleteStudent unable to exec query : ", err)
+		fmt.Println(query, str, "deleteStudent from StudentsTable unable to exec query : ", err)
+		log.Error(ctx, query, str, "deleteStudent from StudentsTable unable to exec query : ", err)
 		return err
 	}
+	query = fmt.Sprintf("DELETE  from %s.%s where student_id=$1;", ServiceConfig.Postgres.Schema, ServiceConfig.Postgres.StudentAssignmentsScoreTable)
+	if _, err := conn.Exec(ctx, query, str); err != nil {
+		fmt.Println(query, str, "deleteStudent from StudentAssignmentsScoreTable unable to exec query : ", err)
+		log.Error(ctx, query, str, "deleteStudent from StudentAssignmentsScoreTable unable to exec query : ", err)
+		return err
+	}
+
 	return nil
 }
 

@@ -73,6 +73,9 @@ func Logger(h http.Handler) http.Handler {
 		start := time.Now()
 
 		defer func() {
+			if lw.Status() == 0 {
+				lw.WriteHeader(http.StatusNotFound)
+			}
 
 			scheme := "http"
 			if r.TLS != nil {
